@@ -67,7 +67,7 @@
                 </span>
                 {item.title}
             </a>
-        {:else if (item.tags[0] == currentTag || item.tags[1] == currentTag || item.tags[2] == currentTag) && item.title.includes(searchBarInnerText.toLowerCase())}
+        {:else if (item.tags.some(tag => tag === currentTag)) && item.title.includes(searchBarInnerText.toLowerCase())}
             <!-- svelte-ignore a11y-missing-attribute -->
             <a class="panel-block is-active">
                 <span class="panel-icon">
